@@ -70,6 +70,8 @@ version: '2'
 services:
   phpfpm:
     image: 'bitnami/php-example:0.0.1'
+    volumes:
+      - ./php.d:/opt/bitnami/php/lib/php.d
   nginx:
     image: 'bitnami/nginx:latest'
     depends_on:
