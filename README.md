@@ -115,7 +115,8 @@ Docker's linking system uses container ids or names to reference containers. We 
 
 ```bash
 $ docker run -it --name phpfpm \
-  --network app-tier
+  --network app-tier \
+  -v ./php.d:/opt/bitnami/php/lib/php.d \
   -v /path/to/app:/app \
   bitnami/php-fpm
 ```
@@ -129,6 +130,7 @@ services:
     networks:
       - app-tier
     volumes:
+      - ./php.d:/opt/bitnami/php/lib/php.d
       - /path/to/app:/app
 ```
 
