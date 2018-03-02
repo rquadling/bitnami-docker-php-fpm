@@ -12,7 +12,8 @@ RUN mkdir /opt/bitnami/php/logs && touch /opt/bitnami/php/logs/php-fpm.log
 
 ENV BITNAMI_APP_NAME="php-fpm" \
     BITNAMI_IMAGE_VERSION="7.1.15-r0" \
-    PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:$PATH"
+    PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:$PATH" \
+    PHP_INI_SCAN_DIR="/opt/bitnami/php/lib/php.d"
 
 EXPOSE 9000
 
